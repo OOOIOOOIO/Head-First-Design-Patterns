@@ -1,4 +1,4 @@
-package book.hfdp.ch01_duck;
+package book.hfdp.ch01_strategy_pattern;
 
 public class MuthQuak implements QuackBehavior{
     @Override
