@@ -5,8 +5,6 @@
 <hr>
 <br>
 
-# Chap 01 : 디자인 패턴 세계로 떠나기, 디자인 패턴 소개와 전략 패턴(Strategy Pattern)
-
 ## 객체지향의 기초
 - 추상화
 - 캡슐화
@@ -16,71 +14,30 @@
 <br>
 
 ## 객체지향의 원칙
-- 바뀌는 부분은 캡슐화한다.
-- 상속보다는 구성(Composition)을 활용한다.
-- 구현보다는 인터페이스에 맞춰 프로그래밍한다.
-
-### 구성(Composition)
-- <code>A has B</code> 라고 생각하면 편하다.
-
-```java
-public abstract class Duck {
-    FlyBehavior flyBehavior; // 구성(Composition)
-    QuackBehavior quackBehavior;
-
-    public Duck() {;}
-
-    public abstract void display();
-    public void performFly(){
-        flyBehavior.fly();
-    } // 행동 클래스(구현체)에 위임한다!(생성자에서 주입)
-
-    public void performQuak(){
-        quackBehavior.quack();
-    }
-
-    public void setFlyBehavior(FlyBehavior fb) {
-        this.flyBehavior = fb;
-    }
-
-    public void setQuackBehavior(QuackBehavior qb) {
-        this.quackBehavior = qb;
-    }
-
-
-    public void swim(){
-        System.out.println("모든 오리는 물에 뜹니다. 가짜 오리도 뜨죠.");
-    }
-
-}
-```
-
-```java
-package book.hfdp.ch01_duck;
-/*
-생성자를 호출(인스턴스 생성시점)하는 시점에
-quackBehavior, flyBehavior 인스턴스 변수(인터페이스)에 Quak, FlyWithWings 구현 클래스(구현체)를 주입한다.
-
-ps. quackBehavior, flyBehavior는 Duck 추상 클래스에서 상속 받는다.
- */
-public class MallardDuck extends Duck {
-
-    public MallardDuck() {
-        quackBehavior = new Quak();
-        flyBehavior = new FlyWithWings();
-
-    }
-
-    @Override
-    public void display() {
-        System.out.println("저는 물오리입니다!~!");
-
-    }
-}
-
-```
+- 바뀌는 부분은 캡슐화한다.(전략 패턴)
+- 상속보다는 구성(Composition)을 활용한다.(전략 패턴)
+     - 구성 : A has B 라고 생각하면 편하다.
+- 구현보다는 인터페이스에 맞춰 프로그래밍한다.(전략 패턴)
+- 상호작용하는 객체 사이에서는 가능하면 느슨한 결합을 사용해야 한다.(옵저버 패턴)
 
 <br>
+
+## 객치제향 패턴
+1. 전략 패턴
+- 전략 패턴은 알고리즘 군을 정의하고 캡슐화하여 각각의 알고리즘군을 수정해서 쓸 수 있게 해준다.
+- 전략 패턴을 사용하면 클라이언트로부터 알고리즘을 분해해 독립적으로 변경할 수 있다.
+
+<br>
+
+2. 옵저버 패턴
+- 한 객체의 상태가 바뀌면 그 객체에 의존하는 다른 객체에게 연락이 자동으로 간다.
+- 자동으로 내용이 갱신되는 방식으로 일대다(one-to-many) 의존성을 정의한다.
+    
+<br>
+<hr>
+<br>
+
+# Chap 01 : 디자인 패턴 세계로 떠나기, 디자인 패턴 소개와 전략 패턴(Strategy Pattern)
 
 ## 상속을 이해하자!
 - 상속을 잘못사용할 시 발생하는 문제점
@@ -132,4 +89,27 @@ public class MallardDuck extends Duck {
 <hr>
 <br>
 
-# Chap 02 : 
+# Chap 02 : 객체들에게 연락 돌리기, 옵저버 패턴
+
+- 소프트웨어 개발에서 바뀌지 않는 단 하나의 요소는 바로 "변화"이다. 따라서 개발시 "확장성"있게 설계해야 한다.
+
+<br>
+
+## 옵저버 패턴의 정의
+- 한 객체의 상태가 바뀌면 그 객체에 의존하는 다른 객체에게 연락이 가고 자동으로 내용이 갱신되는 방식으로 일대다(one-to-many) 의존성을 정의한다.
+- 주제와 옵저버로 일대다 관계가 정의된다.
+- 보통은 주제 인터페이스와 옵저버 인터페이스가 들어있는 클래스 디자인으로 구현한다.
+
+<br>
+
+## 옵저버 패턴 이해(신문사와 구독자로 이루어진 신문 구독 서비스와 비슷!)
+- 주제(Subject)에서 중요한 데이터를 관리한다.
+- 옵저버 객체들은 주제를 구독하고 있으며(주체 객체에 등록되어 있다.) 주제 데이터가 바뀌면 갱신 내용을 전달받는다.
+
+<br>
+
+## 옵저버 패턴 작동 원리(Push 방식)
+- 옵저버가 되고 싶은 객체는 주제에게 요청한다.
+- 주제 값이 바뀌면 모든 옵저버가 연락을 받는다.
+- 옵저버 리스트에서 탈퇴하고 싶다면 주제에게 요청한다.
+- 주제 값이 바뀌면 역시 모든 옵저버에게 연락을 받는다.
