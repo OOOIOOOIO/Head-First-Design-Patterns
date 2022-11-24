@@ -1,4 +1,7 @@
-package book.hfdp.ch01_strategy_pattern;
+package book.hfdp.ch01_strategy_pattern.duck;
+
+import book.hfdp.ch01_strategy_pattern.duck.fly.FlyNoWay;
+import book.hfdp.ch01_strategy_pattern.duck.sound.Quak;
 
 public class ModelDuck extends Duck {
     @Override

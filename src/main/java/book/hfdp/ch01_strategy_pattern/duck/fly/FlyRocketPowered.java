@@ -1,4 +1,4 @@
-package book.hfdp.ch01_strategy_pattern;
+package book.hfdp.ch01_strategy_pattern.duck.fly;
 
 public class FlyRocketPowered implements FlyBehavior{
     @Override

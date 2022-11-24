@@ -1,4 +1,10 @@
 package book.hfdp.ch01_strategy_pattern;
+
+import book.hfdp.ch01_strategy_pattern.duck.Duck;
+import book.hfdp.ch01_strategy_pattern.duck.MallardDuck;
+import book.hfdp.ch01_strategy_pattern.duck.ModelDuck;
+import book.hfdp.ch01_strategy_pattern.duck.fly.FlyRocketPowered;
+
 /*
 MallardDuck에서 상속받은 performQuak() 메소드가 호출된다.
 이 메소드에서는 객체의 QuakBehavior에게 할 일을 위임했다.

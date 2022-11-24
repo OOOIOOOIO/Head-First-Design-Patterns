@@ -1,4 +1,8 @@
-package book.hfdp.ch01_strategy_pattern;
+package book.hfdp.ch01_strategy_pattern.duck;
+
+import book.hfdp.ch01_strategy_pattern.duck.fly.FlyBehavior;
+import book.hfdp.ch01_strategy_pattern.duck.sound.QuackBehavior;
+
 /*
 인터페이스 레퍼런스 변수를 선언한다.
 서브클래스(자식 클래스)도 이 변수를 상속 받는다.
