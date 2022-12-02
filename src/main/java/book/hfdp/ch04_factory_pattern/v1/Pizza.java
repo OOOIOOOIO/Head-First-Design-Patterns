@@ -1,4 +1,4 @@
-package book.hfdp.ch04_factory_pattern;
+package book.hfdp.ch04_factory_pattern.v1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ public abstract class Pizza {
     String dough;
     String sauce;
     List<String> toppings = new ArrayList<>();
+
 
     void prepare(){
         System.out.println("준비 중: " + name);

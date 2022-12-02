@@ -1,4 +1,4 @@
-package book.hfdp.ch04_factory_pattern;
+package book.hfdp.ch04_factory_pattern.v1;
 
 public class ChicagoStyleCheesePizza extends Pizza {
     public ChicagoStyleCheesePizza() {

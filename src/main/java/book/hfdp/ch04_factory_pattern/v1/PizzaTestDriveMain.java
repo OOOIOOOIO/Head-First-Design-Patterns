@@ -1,4 +1,4 @@
-package book.hfdp.ch04_factory_pattern;
+package book.hfdp.ch04_factory_pattern.v1;
 
 public class PizzaTestDriveMain {
     public static void main(String[] args) {
