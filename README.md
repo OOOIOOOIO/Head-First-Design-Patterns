@@ -1,9 +1,7 @@
 # Head-First-Design-Patterns
 [Book] Head First Design Patterns, Eric Freeman, Bert Bates, Kathy Sierra, Elisabeth Robson
 
-<br>
 <hr>
-<br>
 
 ## 객체지향의 기초
 - 추상화
