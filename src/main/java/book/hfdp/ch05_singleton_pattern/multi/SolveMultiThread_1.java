@@ -1,4 +1,4 @@
-package book.hfdp.ch05_singleton_pattern;
+package book.hfdp.ch05_singleton_pattern.multi;
 
 /**
  * getInstance 메소드에 동기화 하기

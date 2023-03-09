@@ -1,7 +1,8 @@
-package book.hfdp.ch05_singleton_pattern;
+package book.hfdp.ch05_singleton_pattern.multi;
 
 /**
  * 처음부터 생성해 버리기
+ * static factory 패턴
  */
 public class SolveMultiThread_2 {
 

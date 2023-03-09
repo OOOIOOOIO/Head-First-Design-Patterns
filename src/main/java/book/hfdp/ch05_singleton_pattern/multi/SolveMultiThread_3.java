@@ -1,4 +1,4 @@
-package book.hfdp.ch05_singleton_pattern;
+package book.hfdp.ch05_singleton_pattern.multi;
 
 /**
  * DCL을 사용해 처음 생성할 때문 동기화 하기
