@@ -1,4 +1,4 @@
-package book.hfdp.chap07_facade_pattern;
+package book.hfdp.ch07_facade_pattern;
 
 public class HomeMovieTestDrive {
 
